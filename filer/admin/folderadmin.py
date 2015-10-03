@@ -246,7 +246,16 @@ class FolderAdmin(PrimitivePermissionAwareModelAdmin):
                 url = "%s%s%s" % (url, popup_param(request), selectfolder_param(request,"&"))
             return HttpResponseRedirect(url)
         elif folder_id is None:
-            folder = FolderRoot()
+            #folder = FolderRoot()
+            try:
+                Folder.objects.get(id=1)
+            except Folder.DoesNotExist:
+                f = Folder(1, name=_("Files"))
+                f.save()
+            
+            url = reverse('admin:filer-directory_listing', kwargs={'folder_id': 1})
+            url = "%s%s%s" % (url, popup_param(request), selectfolder_param(request,"&"))
+            return HttpResponseRedirect(url)
         else:
             folder = get_object_or_404(Folder, id=folder_id)
         request.session['filer_last_folder_id'] = folder_id

@@ -95,6 +95,9 @@
     {% endblock %}
 </div>
 <div id="content-main">
+{% with folder as instance %}
+{% include "admin/filer/breadcrumbs.html" %}
+{% endwith %}
 
     <div class="module" id="changelist">
         {% include "admin/filer/tools/search_form.html" %}

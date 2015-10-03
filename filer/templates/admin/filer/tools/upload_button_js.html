@@ -32,6 +32,10 @@ $(function() {
                     <td class="buttons"></td>';
             }
             $('#fileUpload-' + id).html(html);
+            
+            if ($('.fileUploadQueueItem .percentage').size() < 1) {
+                $('.clipboard form>button[type="submit"].pastelink').trigger('click');
+            }
         },
         onCancel: function(id, fileName){
             $('#fileUpload-' + id).hide();
