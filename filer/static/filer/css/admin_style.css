@@ -124,12 +124,13 @@ table thead th.thumbHeader {
 }
 a.insertlinkButton {
 	padding: 4px;
-	padding-left: 28px;
+	/*padding-left: 28px;
 	background-image: url(../img/select_item.gif);
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;*/
+    font-size:16px;
 }
 a.insertlinkButton:hover {
-	background-image: url(../img/select_item-hover.gif);
+/*	background-image: url(../img/select_item-hover.gif);*/
 }
 
 h1.folder_header {
